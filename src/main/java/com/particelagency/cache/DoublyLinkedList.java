@@ -45,4 +45,21 @@ final class DoublyLinkedList<K,V>{
 
     this.size--;
   }
+  
+  //recomposition of exisitng nodes methods
+  void moveNodeToHead(Node<K,V> node){
+    removeNode(node);
+    addNode(node);
+  }
+
+  Node<K,V> removeLastNode(){
+    if(this.size == 0){
+      return null;
+    }
+
+    Node<K,V> lastNode = this.tail.getPrev();
+    removeNode(lastNode);
+    
+    return lastNode;
+  }
 }
