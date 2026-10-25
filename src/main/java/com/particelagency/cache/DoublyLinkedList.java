@@ -62,4 +62,9 @@ final class DoublyLinkedList<K,V>{
     
     return lastNode;
   }
+  void clear() {
+    this.head.setNext(this.tail);
+    this.tail.setPrev(this.head);
+    this.size = 0;
+  }
 }

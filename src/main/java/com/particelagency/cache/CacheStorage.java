@@ -11,7 +11,7 @@ public final class CacheStorage<K, V> {
 
     public CacheStorage(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArgumentException("capacity must be greater than zero");
+            throw new IllegalArgumentException("Capacity must be greater than zero");
         }
         this.capacity = capacity;
         this.map = new HashMap<>(capacity);
@@ -19,7 +19,7 @@ public final class CacheStorage<K, V> {
     }
 
     public V get(K key) {
-        Objects.requireNonNull(key, "cache key cannot be null");
+        Objects.requireNonNull(key, "Cache key cannot be null");
 
         Node<K, V> node = this.map.get(key);
         
@@ -34,7 +34,7 @@ public final class CacheStorage<K, V> {
     }
 
     public void put(K key, V value) {
-        Objects.requireNonNull(key, "cache key cannot be null");
+        Objects.requireNonNull(key, "Cache key cannot be null");
 
         Node<K, V> existingNode = this.map.get(key);
 
@@ -56,7 +56,7 @@ public final class CacheStorage<K, V> {
     }
 
     public void remove(K key) {
-        Objects.requireNonNull(key, "cache key cannot be null");
+        Objects.requireNonNull(key, "Cache key cannot be null");
 
         Node<K, V> node = this.map.remove(key);
         if (node != null) {
